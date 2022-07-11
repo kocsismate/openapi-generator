@@ -1710,6 +1710,13 @@ definitions:
           enum:
             - fish
             - crab
+      123_number_enum:
+        type: array
+        items:
+          type: string
+          enum:
+            - cat
+            - dog
       # comment out the following as 2d array of enum is not supported at the moment
       #array_array_enum:
       #  type: array

@@ -688,9 +688,9 @@ public abstract class AbstractPhpCodegen extends DefaultCodegen implements Codeg
         enumName = enumName.replace("[]", "");
 
         if (enumName.matches("\\d.*")) { // starts with number
-            return "_" + enumName;
+            return getTypeDeclaration("_" + enumName);
         } else {
-            return enumName;
+            return getTypeDeclaration(enumName);
         }
     }
 
