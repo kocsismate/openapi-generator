@@ -303,11 +303,11 @@ public class PhpModelTest {
         final Map<String, Schema> schemas = openAPI.getComponents().getSchemas();
         final Schema definition = schemas.get("EnumArrays");
 
-        Schema property =  (Schema) definition.getProperties().get("array_enum");
+        Schema property = (Schema) definition.getProperties().get("array_enum");
         CodegenProperty prope = codegen.fromProperty("array_enum", property);
         codegen.updateCodegenPropertyEnum(prope);
-        Assert.assertEquals(prope.datatypeWithEnum, "ARRAY_ENUM[]");
-        Assert.assertEquals(prope.enumName, "ARRAY_ENUM");
+        Assert.assertEquals(prope.datatypeWithEnum, "\\OpenAPI\\Client\\Model\\ARRAY_ENUM[]");
+        Assert.assertEquals(prope.enumName, "\\OpenAPI\\Client\\Model\\ARRAY_ENUM");
         Assert.assertTrue(prope.isEnum);
         Assert.assertEquals(prope.allowableValues.get("values"), Arrays.asList("fish", "crab"));
 
@@ -322,8 +322,8 @@ public class PhpModelTest {
         Assert.assertEquals(prope.allowableValues.get("enumVars"), Arrays.asList(fish, crab));
 
         // assert inner items
-        Assert.assertEquals(prope.datatypeWithEnum, "ARRAY_ENUM[]");
-        Assert.assertEquals(prope.enumName, "ARRAY_ENUM");
+        Assert.assertEquals(prope.datatypeWithEnum, "\\OpenAPI\\Client\\Model\\ARRAY_ENUM[]");
+        Assert.assertEquals(prope.enumName, "\\OpenAPI\\Client\\Model\\ARRAY_ENUM");
         Assert.assertTrue(prope.items.isEnum);
         Assert.assertEquals(prope.items.allowableValues.get("values"), Arrays.asList("fish", "crab"));
         Assert.assertEquals(prope.items.allowableValues.get("enumVars"), Arrays.asList(fish, crab));
@@ -340,8 +340,8 @@ public class PhpModelTest {
         Schema property =  (Schema) definition.getProperties().get("enum_integer");
         CodegenProperty prope = codegen.fromProperty("enum_integer", property);
         codegen.updateCodegenPropertyEnum(prope);
-        Assert.assertEquals(prope.datatypeWithEnum, "ENUM_INTEGER");
-        Assert.assertEquals(prope.enumName, "ENUM_INTEGER");
+        Assert.assertEquals(prope.datatypeWithEnum, "\\OpenAPI\\Client\\Model\\ENUM_INTEGER");
+        Assert.assertEquals(prope.enumName, "\\OpenAPI\\Client\\Model\\ENUM_INTEGER");
         Assert.assertTrue(prope.isEnum);
         Assert.assertFalse(prope.isContainer);
         Assert.assertNull(prope.items);
